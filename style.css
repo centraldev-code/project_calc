@@ -9,3 +9,12 @@ body {
     height: 650px;
     background-color: #EBF6F9;
 }
+.item-title {
+    height: 32px;
+    background-color: #E0E5E7;
+    font-size: 12px;
+    padding-left: 2%;
+}
+.item-title div {
+    padding: 10px;
+}
