@@ -12,6 +12,31 @@
         <div class="item-title">
             <div>Calculadora</div>
         </div>
+        <div class="display">
+            <div class="display-calc" id="subDisplay">50x50=</div>
+            <div class="display-result" id="display">100</div>
+        </div>
+        <div class="teclado-container">
+            <button>CE</button>
+            <button>C</button>
+            <button onclick=deleted()>DEL</button>
+            <button class="operadores" onclick='operacao("divisao")'>/</button>
+            <button onclick=addNumber(7)>7</button>
+            <button onclick=addNumber(8)>8</button>
+            <button onclick=addNumber(9)>9</button>
+            <button class="operadores"onclick='operacao("multiplicacao")'>*</button>
+            <button onclick=addNumber(4)>4</button>
+            <button onclick=addNumber(5)>5</button>
+            <button onclick=addNumber(6)>6</button>
+            <button class="operadores" onclick='operacao("subtracao")'>-</button>
+            <button onclick=addNumber(1)>1</button>
+            <button onclick=addNumber(2)>2</button>
+            <button onclick=addNumber(3)>3</button>
+            <button class="operadores" onclick='operacao("adicao")'>+</button>
+            <button>,</button>
+            <button onclick=addNumber(0)>0</button>
+            <button class="igual" onclick='result()'>=</button>
+        </div>
     </div>
 </body>
 </html>
