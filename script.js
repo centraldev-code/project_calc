@@ -7,6 +7,9 @@ display.innerText = 0;
 
 let acao = false;
 let resultado = 0;
+let resultadoSub = 0;
+let nameAcao = "";
+
 
 function addNumber(number) {
 
@@ -26,18 +29,23 @@ function deleted() {
     } else {
         display.innerText = 0;
     }
+
 }
 
 function operacao(params) {
     console.log(params);
+    nameAcao = params;
     if(params == "adicao") {
         acao = true;
-        subDisplay.innerText += display.innerText + " +";
         resultado = parseInt(resultado) + parseInt(display.innerText);
+        addOperacaoSubDisplay(params);
         console.log(resultado);
     }
     if(params == "subtracao") {
-        
+        acao = true;
+        resultado = parseInt(resultado) - parseInt(display.innerText);
+        addOperacaoSubDisplay(params);
+        console.log(resultado);
     }
     if(params == "divisao") {
         
@@ -48,7 +56,53 @@ function operacao(params) {
     
 }
 
+function addOperacaoSubDisplay(params) {
+    let simbolo = "+";
+
+    if(params == "subtracao") {
+        simbolo = "-";
+    }
+    if(params == "multiplicao") {
+        simbolo = "*";
+    }
+    if(params == "divisao") {
+        simbolo = "/";
+    }
+    if(params == "igual") {
+        simbolo = "=";
+        subDisplay.innerText = resultado + " + " + display.innerText + " " + simbolo;
+        return;
+    }
+    
+    subDisplay.innerText = resultado + " " + simbolo;
+    
+}
+
 function result() {
+    addOperacaoSubDisplay("igual")
+    if(nameAcao == "adicao") {
+        resultado = parseInt(resultado) + parseInt(display.innerText);
+    }
     display.innerText = resultado;
+    console.log(resultado);
+    //display.style.backgroundColor = "red";
+}
+
+function updateResult(operador) {
+    if (operador == "adicao") {
+        resultado = parseInt(resultado) + parseInt(display.innerText);
+    }
+    
+}
+
+function ce() {
+    display.innerText = 0;
+}
+
+function reset() {
+    display.innerText = 0;
+    subDisplay.innerText = "";
+    resultado = 0;
+    nameAcao = "";
 }
 
