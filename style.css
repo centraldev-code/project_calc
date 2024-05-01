@@ -28,8 +28,8 @@ body {
     font-size: 25px;
 }
 .display-result {
-    font-size: 50px;
-    margin-top: 5px;
+    font-size: 80px;
+    margin: 5px;
 }
 .teclado-container {
     display: flex;
